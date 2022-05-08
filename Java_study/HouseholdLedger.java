@@ -2,7 +2,7 @@ package Java_edu_page;
 import java.util.Scanner;
 
 abstract class Money {
-	int money;
+	private int money;
 	
 	Money() {
 		this.money = money;
@@ -16,11 +16,11 @@ abstract class Money {
 	abstract void moneyManagement();
 }
 
-abstract class MonneyAdd extends Money {
-	int addMoney;
+abstract class MoneyAdd extends Money {
+	private int addMoney;
 	
-	public MonneyAdd(int addMoney) {
-		super();
+	public MoneyAdd(int money, int addMoney) {
+		super(money);
 		this.addMoney = addMoney;
 	}
 
@@ -31,17 +31,45 @@ abstract class MonneyAdd extends Money {
 }
 
 abstract class MoneyUse extends Money {
-	int usingMoney;
+	private int usingMoney;
 
-	public MoneyUse(int usingMoney) {
-		super();
+	public MoneyUse(int money, int usingMoney) {
+		super(money);
 		this.usingMoney = usingMoney;
 	}
-	
+
+	@Override
+	void moneyManagement() {
+		setMoney(getMoney() - usingMoney);
+	}
 }
 
 public class HouseholdLedger {
+	Scanner in = new Scanner(System.in);
+	
+	void functionMoney(Money money) {
+		if(money instanceof MoneyAdd)
+			money.moneyManagement();
+		else if(money instanceof MoneyUse)
+			money.moneyManagement();
+	}
+	
+	boolean Decision() {
+		boolean sub;
+		System.out.println("실행: t , 종료: (아무키를 누르세요)");
+		String menu = in.next();
+		switch(menu) {
+		case "t" :
+			sub = true;
+			break;
+		default :
+			System.out.println("종료");
+			sub = false;
+		}
+		return sub;
+	}
+	
 	public static void main(String[] args) {
-		
+		Money[] money = new Money[30];
 	}
 }
