@@ -1,5 +1,7 @@
 package homeworkWeek03;
 
+//í•˜ë‚˜ë¹¼ê¸° ê³¼ì œ
+
 import java.util.*;
 
 public class Main {
@@ -7,21 +9,21 @@ public class Main {
 		int i=3;		
 		int win=0, lose=0;		
 		while(i>0){			
-			int hright = (int)(Math.random()*3)+1; //»ç¶÷ÀÇ ¿À¸¥¼Õ			
-			int hleft = (int)(Math.random()*3)+1; //»ç¶÷ÀÇ ¿Ş¼Õ			
-			int cright = (int)(Math.random()*3)+1; //ÄÄÇ»ÅÍÀÇ ¿À¸¥ÂÊ¼Õ			
-			int cleft = (int)(Math.random()*3)+1; //ÄÄÇ»ÅÍÀÇ ¿Ş¼Õ	
+			int hright = (int)(Math.random()*3)+1; //ì‚¬ëŒì˜ ì˜¤ë¥¸ì†			
+			int hleft = (int)(Math.random()*3)+1; //ì‚¬ëŒì˜ ì™¼ì†			
+			int cright = (int)(Math.random()*3)+1; //ì»´í“¨í„°ì˜ ì˜¤ë¥¸ìª½ì†			
+			int cleft = (int)(Math.random()*3)+1; //ì»´í“¨í„°ì˜ ì™¼ì†	
 			
 			if((hright == hleft) || (cright == cleft))				
 				continue;
 			
-			System.out.println("<-- 1.ÁÖ¸Ô 2.°¡À§ 3.º¸ Áß 2°³ ¼±ÅÃ -->");			
-			System.out.printf("³» ¿À¸¥¼ÕÀº %d, ¿Ş¼ÕÀº %d¸¦ ¼±ÅÃ\n", hright, hleft);
-			System.out.printf("ÄÄÇ»ÅÍÀÇ ¿À¸¥¼ÕÀº %d, ¿Ş¼ÕÀº %d¸¦ ¼±ÅÃ\n", cright, cleft);
+			System.out.println("<-- 1.ì£¼ë¨¹ 2.ê°€ìœ„ 3.ë³´ ì¤‘ 2ê°œ ì„ íƒ -->");			
+			System.out.printf("ë‚´ ì˜¤ë¥¸ì†ì€ %d, ì™¼ì†ì€ %dë¥¼ ì„ íƒ\n", hright, hleft);
+			System.out.printf("ì»´í“¨í„°ì˜ ì˜¤ë¥¸ì†ì€ %d, ì™¼ì†ì€ %dë¥¼ ì„ íƒ\n", cright, cleft);
 			
-			System.out.println("<-- ¿À¸¥¼Õ, ¿Ş¼Õ Áß ¼±ÅÃ -->");
+			System.out.println("<-- ì˜¤ë¥¸ì†, ì™¼ì† ì¤‘ ì„ íƒ -->");
 			
-			System.out.println("<-- ¿À¸¥¼Õ, ¿Ş¼Õ Áß ¼±ÅÃ -->");
+			System.out.println("<-- ì˜¤ë¥¸ì†, ì™¼ì† ì¤‘ ì„ íƒ -->");
 			int hresult = (int)(Math.random()*2)+1;			
 			int cresult = (int)(Math.random()*2)+1;					
 			if(hresult ==1 )				
@@ -32,20 +34,20 @@ public class Main {
 				cresult = cright;			
 			else				
 				cresult = cleft;					
-			System.out.printf("³ª : %d, ÄÄÇ»ÅÍ : %d\n", hresult, cresult);
+			System.out.printf("ë‚˜ : %d, ì»´í“¨í„° : %d\n", hresult, cresult);
 			
 			if((hresult==1&&cresult==2)||(hresult==2&&cresult==3)||(hresult==3&&cresult==1)) {				
-				System.out.println("³»°¡ ÀÌ°å´Ù!");				
+				System.out.println("ë‚´ê°€ ì´ê²¼ë‹¤!");				
 				win++;			
 				} else if(hresult == cresult)				
-					System.out.println("ºñ°å±¸¸¸...");			
+					System.out.println("ë¹„ê²¼êµ¬ë§Œ...");			
 				else if((hresult==1&&cresult==3)||(hresult==2&&cresult==1)||(hresult==3&&cresult==2)) {				
-					System.out.println("³»°¡ Á³´Ù.......");				
+					System.out.println("ë‚´ê°€ ì¡Œë‹¤.......");				
 					lose++;			
 					}			
 			i--;			
 			System.out.printf("\n\n");		
 			}				
-		System.out.printf("ÃÖÁ¾ °á°ú --> ³ª : %d, ÄÄÇ»ÅÍ : %d\n", win, lose);
+		System.out.printf("ìµœì¢… ê²°ê³¼ --> ë‚˜ : %d, ì»´í“¨í„° : %d\n", win, lose);
 	}
 }
